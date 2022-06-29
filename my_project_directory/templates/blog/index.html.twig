@@ -1,0 +1,35 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+<section class="aticles">
+   
+  {# (article>h2{Titre de l'article}+div.metadata{Ecrit le 10/05/2022 à Georgia à 20.00 dans la Categorie Politique}+div.content>img
+   (p>lorem15))*3 #}
+
+
+ <article>
+ <h2> LOVE </h2>
+ <div class="metadata" > Ecrit le 10/05/1997 à 19:00 dans la categorie Romance </div>
+ <div class="content" >
+ <p> Love is something we all would have experienced at some point of our lives. Be a silly crush, or an infatuation, your family, you name it- it is one affection that keeps you on your toes, spices up your dreams and last but not the least- you end up having a silly, joyous smile on your face most of the time. Ever thought why people act silly when in love?
+
+Ever guessed what helps love to bloom in our minds?
+
+Man is a social being and he loves to care and to be cared for. A small hug, a smile, an affectionate look, and a jovial talk round the dinner table with all your loved ones all can make you feel lighter, happier.</p>
+<a href="" class="btn btn-primary"> afficher la suite </a>
+</div>
+<article>
+ <h2> EDUCATION</h2>
+ <div class="metadata" > Ecrit le 10/05/1997 à 19:00 dans la categorie Romance </div>
+ <div class="content" >
+ <p> La philosophie représente un coefficient 4 pour les candidats au bac technologique et un coefficient 8 pour les candidats au bac général sur un total de 100.
+  L’an dernier, l’épreuve de philo avait été aménagée en raison de la crise sanitaire du Covid-19 : c’est la meilleure note qui était retenue, entre celle obtenue à l’épreuve et celle du contrôle continu, à condition d’avoir rendu sa copie.
+   Cette année, seule compte la note de l’épreuve du 15 juin.</p>
+<a href="" class="btn btn-primary"> afficher la suite </a>
+</div>
+
+</section>
+{% endblock %}
