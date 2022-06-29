@@ -5,11 +5,6 @@
 
 {% block body %}
 <section class="aticles">
-   
-  {# (article>h2{Titre de l'article}+div.metadata{Ecrit le 10/05/2022 à Georgia à 20.00 dans la Categorie Politique}+div.content>img
-   (p>lorem15))*3 #}
-
-
  <article>
  <h2> LOVE </h2>
  <div class="metadata" > Ecrit le 10/05/1997 à 19:00 dans la categorie Romance </div>
@@ -19,7 +14,7 @@
 Ever guessed what helps love to bloom in our minds?
 
 Man is a social being and he loves to care and to be cared for. A small hug, a smile, an affectionate look, and a jovial talk round the dinner table with all your loved ones all can make you feel lighter, happier.</p>
-<a href="" class="btn btn-primary"> afficher la suite </a>
+<a href="{{path('blog-show',{id:1})}}" class="btn btn-primary"> afficher la suite </a>
 </div>
 <article>
  <h2> EDUCATION</h2>
@@ -28,8 +23,9 @@ Man is a social being and he loves to care and to be cared for. A small hug, a s
  <p> La philosophie représente un coefficient 4 pour les candidats au bac technologique et un coefficient 8 pour les candidats au bac général sur un total de 100.
   L’an dernier, l’épreuve de philo avait été aménagée en raison de la crise sanitaire du Covid-19 : c’est la meilleure note qui était retenue, entre celle obtenue à l’épreuve et celle du contrôle continu, à condition d’avoir rendu sa copie.
    Cette année, seule compte la note de l’épreuve du 15 juin.</p>
-<a href="" class="btn btn-primary"> afficher la suite </a>
+<a href="{{path('blog-show',{id:2})}}" class="btn btn-primary"> afficher la suite </a>
 </div>
 
 </section>
 {% endblock %}
+
