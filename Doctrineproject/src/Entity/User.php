@@ -38,7 +38,7 @@ class User
     private $adress;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $birthdate;
 

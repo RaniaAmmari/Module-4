@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+{% for user in users %}
+    <user>
+    <h2> {{ user.firstname }} </h2>
+     <h2> {{user.lastname}} </h2>
+      <h2> {{user.email}}  {{user.adress}} {{user.birthdate | date ('d/m/y')}}</h2>
+{% endfor %}
+{% endblock %}
