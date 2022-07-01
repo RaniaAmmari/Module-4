@@ -63,4 +63,16 @@ class UserRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+ /**
+     * @return User
+     */
+    public function findById(int $id)
+    {
+        $query = $this->_em->createQuery(
+            'SELECT u
+            FROM App\Entity\User u
+            WHERE u.id = :id'
+        )->setParameter('id', $id);
+        return $query->getResult();
+    }
 }

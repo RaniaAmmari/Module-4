@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\User;
+use App\Repository\UserRepository;
 
 class UserController extends AbstractController
 {
@@ -45,4 +46,14 @@ class UserController extends AbstractController
             ]);
 
    }
+      /**
+     * @Route("/get_user/{id}", name="app_get")
+     */
+    public function getUserById(int $id, UserRepository $userRepository): Response
+    {
+        $user = $userRepository->findById($id);
+        return $this->render('user/index.html.twig', [
+            'users' => $user,
+        ]);
+    }
 }
