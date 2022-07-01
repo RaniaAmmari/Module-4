@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Category;
+use App\Repository\CategoryRepository;
+use App\Repository\ProductRepository;
 
 class CategoryController extends AbstractController
 {
@@ -29,7 +31,7 @@ public Function home() {
           /**
      * @Route("/create-cat/{name}", name="category.create", methods={"GET","HEAD"},requirements={"id"="\d+"})
      */
-    public function createProduct(ManagerRegistry $doctrine, string $name): Response
+    public function createCategory(ManagerRegistry $doctrine, string $name): Response
     {
         $entityManager = $doctrine->getManager();
 
@@ -44,5 +46,19 @@ public Function home() {
 
         return new Response('Saved new category with id '.$cat->getId());
       
+    }
+    /**
+     * @Route("/show-id/{id}", name="category.detail.show")
+     */
+    public function showById(ProductRepository $ProduitRepository,CategoryRepository $CategorieRepository,$id)
+    {
+        $product = $ProduitRepository->find($id);
+        $category  = $CategorieRepository->find($product->getCategory());
+        $products = $category->getProducts();
+        return $this->render('product/detail.html.twig', [
+            'product' => $product,
+            'category' => $category,
+            'products' => $products
+        ]);
     }
 }
