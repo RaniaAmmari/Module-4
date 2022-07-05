@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formpapier 'bootstrap_4_layout.html.twig' %}
+{% block title %}Hello FormController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 5em auto; max-width: 200px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 5px 10px; }
+
+</style>
+
+ <h1> Papiers s'il vous plait </h1>
+{{form_start (formpapier) }}
+
+{{form_widget (formpapier) }}
+
+{{form_end (formpapier) }}
+
+
+{% endblock %}
