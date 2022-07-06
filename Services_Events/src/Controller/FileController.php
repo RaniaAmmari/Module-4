@@ -18,9 +18,10 @@ class FileController extends AbstractController
      * @Route("/create/{filename}/{text}", name="app_file")
      */
     public function createfile ($filename, $text): Response
+
     {    $filesystem = new Filesystem();
         // $current_dir_path="C:\Users\rammari\Desktop\Nouveau dossier\Services_Events\public";
-        $current_dir_path = '\\vendor\symfony\http-client-contracts\Test\Fixtures\web\\ ';
+         $current_dir_path = '\\vendor\symfony\http-client-contracts\Test\Fixtures\web\\ ';
         try {
             $filename = $current_dir_path . "$filename.txt";
          
@@ -59,7 +60,7 @@ class FileController extends AbstractController
  /**
      * @Route("/copy/{filename}/{filename_copy}", name="app_file_copy")
      */
-public function Copyfile(string $filename, string $filename_copy):Response {
+public function Copyfile(string $filename, string $filename_copy) {
  
     try {
         $fsObject = new Filesystem();

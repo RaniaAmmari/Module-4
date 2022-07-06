@@ -7,7 +7,7 @@ use App\Classe\Info;
 use App\Classe\Simple;
 use App\Classe\linkhttp;
 use App\Classe\Equipe;
-use App\Controller\Joueur;
+use App\Classe\Joueur;
 
 use App\Validator\Leboncoin;
 use Symfony\Component\Validator\Constraints\LessThan;
@@ -199,6 +199,30 @@ class FormController extends AbstractController
             return $this->render('form/link.html.twig', [
                 'formlink' => $form-> createView() ]);
     }
+     /**
+     * @Route("/imbj", name="imbj_form")
+     */
+    public function imriquej(Request $request ):Response
+     {
+
+        $joueur= new Joueur();
+        $form = $this->createFormBuilder($joueur)
+         ->add('Nom',textType::class,['required' => true])
+        ->add('Age',NumberType::class,['required' => true])
+        ->getForm();
+    
+         $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $form = $form->getData();
+            return $this->render('success.html.twig');
+        }
+       
+
+        return $this->render('form/show5.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+    
    /**
      * @Route("/imbequipe", name="imbrique")
      */
@@ -233,6 +257,8 @@ class FormController extends AbstractController
             'formimp' => $form->createView(),
         ]);
     }
+
+   
 
 
 }
